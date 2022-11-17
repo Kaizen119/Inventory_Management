@@ -2,6 +2,7 @@ import React from 'react'
 import {useState} from 'react'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
+import css from '../components/main.module.css'
 
 const LogIn = () => {
 
@@ -42,17 +43,23 @@ const LogIn = () => {
             }) 
         }
 return (
+  <body>
     <>
-    <h1>Please Log In</h1>
-    <div>
+    <div className={css.container}>
+    <h1>Please Login</h1>
+    <div className='container'>
         {errors.map((error,index) => <p key ={index}>{error}</p>)}
     </div>
-    <form onSubmit={loginUser}> 
+    <div>
+    <form className='btn' onSubmit={loginUser} ><br/>
         Email: <input onChange={(e) => setEmail(e.target.value)} value={email}/><br/>
-        Password:<input onChange={(e) => setPassword(e.target.value)} value={password}/><br/>
-        <button>Log In</button>
+        Password: <input onChange={(e) => setPassword(e.target.value)} value={password}/><br/>
+        <button className={css.btn}>Log In</button>
     </form>
+    </div>
+    </div>
     </>
+    </body>
 )
 }
 
