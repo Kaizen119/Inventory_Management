@@ -64,7 +64,6 @@ return (
     <div className={css.container2}>
     <img src="/imgs/GBI2.png" alt=""/>
     <h1>Please Register Your Account</h1>
-    <div className={css.container3}>
     <form className={css.form}onSubmit={createUser}>
         Name:  <input onChange={(e) => setName(e.target.value)} value={name}/><br/>
         Email: <input onChange={(e) => setEmail(e.target.value)} value={email}/><br/>
@@ -76,7 +75,7 @@ return (
         <br/><button className={css.btn} >Register</button>
     </form>
     </div>
-    </div>
+
     </>
 )
 }

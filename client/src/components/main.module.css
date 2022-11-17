@@ -20,11 +20,11 @@ body{
     background-color: rgb(4,43,91);
     height: 100%;
     max-width: 100%;
-
     justify-content: center;
     align-items: center;
     justify-content: center;
     margin: 0;
+
 
 }
 .container{
@@ -41,7 +41,7 @@ body{
     flex-direction: column;
     font-size: x-large;
     font-style: bold;
-    
+    margin-left: 37%;
     
 
 }
@@ -59,8 +59,8 @@ body{
     flex-direction: column;
     font-size: x-large;
     font-style: bold;
-    
-
+    margin-left: 37%;
+;
 }
 .container3{
     display: flex;
@@ -72,12 +72,30 @@ body{
     border-radius: 20%;
     border-color: white;
     justify-content: center;
-    /* align-items: center; */
-    /* flex-direction: column; */
+    align-items: center;
+    flex-direction: column;
     font-size: x-large;
     font-style: bold;
-    margin-top: 20px;
+    margin-left: 37%;
+
     
+
+}
+.container4{
+    margin-top: 100px;
+    display: flex;
+    background-color: rgb(96,246,246);
+    height:700px;
+    width: 700px;
+    color: black;
+    border-radius: 20%;
+    border-color: white;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: x-large;
+    font-style: bold;
+    margin-left: 37%;
     
 
 }
@@ -91,6 +109,16 @@ h1{
     font: 200;
     height: 30px;
     width: 120px;
+    margin-top: 10px;
+    font-size: large;
+    padding: 3px;
+}
+.btn2{
+    color: rgb(4,43,91);
+    background-color: white;
+    font: 200;
+    height: 30px;
+    width: 200px;
     margin-top: 10px;
     font-size: large;
     padding: 3px;
