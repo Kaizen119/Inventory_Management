@@ -16,14 +16,14 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 25%;
+    margin-top:5%;
 
 }
 .container{
     display: flex;
     background-color: rgb(96,246,246);
-    height:400px;
-    width: 500px;
+    height:500px;
+    width: 600px;
     color: black;
     border-radius: 20%;
     border-color: white;
@@ -32,6 +32,7 @@ body{
     flex-direction: column;
     font-size: x-large;
     font-style: bold;
+    
     
 
 }
@@ -48,6 +49,7 @@ body{
     flex-direction: column;
     font-size: x-large;
     font-style: bold;
+    margin-top: 20px;
     
 
 }
@@ -59,8 +61,19 @@ h1{
     color: rgb(4,43,91);
     background-color: white;
     font: 200;
-    height: 25px;
+    height: 30px;
     width: 120px;
-    margin-top: 50px;
+    margin-top: 10px;
     font-size: large;
+    padding: 3px;
+}
+.nav{
+    background-color: rgb(88,225,226);
+    color: white;
+}
+.form{
+    flex-direction: column;
+
+    justify-content: center;
+    align-content: center;
 }

@@ -1,10 +1,11 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
+import css from '../components/main.module.css'
 
 const Navbar = (props) => {
     const navigate= useNavigate();
     return (
-        <div>
+        <div className={css.nav}>
             <h3>Nav Bar</h3>
             <ul>
                 <li><button onClick={() => navigate('/addProduct')}>Add Product</button></li>
