@@ -65,12 +65,6 @@ UserSchema.pre('save', function(next) {
         });
     });
 
-// Generate web token
-const generateToken = (id) => {
-    return jwt.sign({id}, process.env.JWT_SECRETS, {expiresIn: "1d"})
-};
-
-const token = generateToken(UserSchema._id);
 
 
 //Create the schema and export it
