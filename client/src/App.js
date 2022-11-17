@@ -6,6 +6,7 @@ import LogIn from './views/LogIn';
 import Register from './views/Register';
 import AddProducts from './views/AddProducts';
 import UpdateProducts from './views/UpdateProducts'
+import css from './components/main.module.css'
 
 function App() {
   return (

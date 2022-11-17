@@ -2,6 +2,7 @@ import React from 'react'
 import {useState} from 'react'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
+import css from '../components/main.module.css'
 
 const Register = () => {
 
@@ -56,11 +57,13 @@ const Register = () => {
     }
 return (
     <>
-    <h1>Please Register Your Account</h1>
-    <div>
+    
+    <div >
         {errors.map((error,index) => <p key ={index}>{error}</p>)}
     </div>
-    <form onSubmit={createUser}>
+    <div className={css.container2}>
+    <h1>Please Register Your Account</h1>
+    <form className={css.form}onSubmit={createUser}>
         Name:<input onChange={(e) => setName(e.target.value)} value={name}/><br/>
         Email: <input onChange={(e) => setEmail(e.target.value)} value={email}/><br/>
         Password:<input onChange={(e) => setPassword(e.target.value)} value={password}/><br/>
@@ -68,8 +71,9 @@ return (
         Image: <input onChange={(e) => setImage(e.target.value)} value={image}/><br/>
         Phone Number: <input type="number" onChange={(e) => setPhoneNumber(e.target.value)} value={phoneNumber}/><br/>
         Bio:<textarea onChange={(e) => setBio(e.target.value)} value={bio}></textarea>
-        <button >Register</button>
+        <br/><button className={css.btn} >Register</button>
     </form>
+    </div>
     </>
 )
 }
