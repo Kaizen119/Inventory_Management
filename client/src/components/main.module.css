@@ -39,7 +39,7 @@ body{
 .container2{
     display: flex;
     background-color: rgb(96,246,246);
-    height:500px;
+    height:600px;
     width: 600px;
     color: black;
     border-radius: 20%;
@@ -50,6 +50,24 @@ body{
     font-size: x-large;
     font-style: bold;
     margin-top: 20px;
+    
+
+}
+.container3{
+    display: flex;
+    background-color: rgb(96,246,246);
+    height:600px;
+    width: 600px;
+    color: black;
+    border-radius: 20%;
+    border-color: white;
+    justify-content: center;
+    /* align-items: center; */
+    /* flex-direction: column; */
+    font-size: x-large;
+    font-style: bold;
+    margin-top: 20px;
+    
     
 
 }

@@ -47,7 +47,7 @@ return (
   <body>
     <>
     <div className={css.container}>
-
+      <img src="/imgs/GBI2.png" alt=""/>
     <h1>Please Login</h1>
   
     <div className='container'>
