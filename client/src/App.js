@@ -6,6 +6,7 @@ import LogIn from './views/LogIn';
 import Register from './views/Register';
 import AddProducts from './views/AddProducts';
 import UpdateProducts from './views/UpdateProducts'
+import OneProduct from './views/OneProduct'
 import css from './components/main.module.css'
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
       <Route path='/register' element={<Register />}/>
       <Route path='/dashboard' element={<Dashboard />}/>
       <Route path='/addProduct' element={<AddProducts />}/>
+      <Route path='/oneProduct/:id' element={<OneProduct />}/>
       <Route path='/updateProduct/:id' element={<UpdateProducts />}/>
 
       {/* Redirect */}
