@@ -1,4 +1,5 @@
 const ProductController = require('../controllers/products.controller');
+const { authenticate } = require('../config/jwt.config');
 
 module.exports = app => {
     app.get('/api/products', ProductController.findAllProducts);

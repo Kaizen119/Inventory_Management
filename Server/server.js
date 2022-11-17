@@ -7,7 +7,8 @@ const DB = "inventory"
 
 
 //----- MiddleWare -----
-app.use(cors({credentials: true, origin: 'http://localhost:3000'}), express.json(), express.urlencoded({extended:true}),cookieParser());
+app.use(cors({credentials: true, origin: 'http://localhost:3000'}), express.json(), express.urlencoded({extended:true}));
+app.use(cookieParser())
 
 //----------------------
 
