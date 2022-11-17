@@ -11,15 +11,21 @@ import css from '../components/main.module.css'
 const Dashboard = (props) => {
     const [id,setId] = useState('')
 return(
-    <body>
-    <>
-    <p>{id}</p>
-    <header>{<Header />}</header>
-    <div>{<Navbar />}</div>
-    <div>{<InventoryStats />}</div>
-    <div>{<InventoryTable />}</div>
 
-    </>
+    // className={css.btn}
+<body>
+        <header>{<Header />}</header>
+        
+        <br/><br/>
+    {/* <p>{id}</p> */}
+    {/* <div className={css.main}>
+        <div className={css.leftbar}>{<Navbar />}
+        </div>
+        <div className={css.bigmain}>
+            <div>{<InventoryStats />}</div>
+            <div>{<InventoryTable />}</div>
+        </div>
+    </div> */}
     </body>
 )
 }

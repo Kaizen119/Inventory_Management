@@ -5,6 +5,7 @@ import css from '../components/main.module.css'
 const Navbar = (props) => {
     const navigate= useNavigate();
     return (
+        <body>
         <div className={css.nav}>
             <h3>Nav Bar</h3>
             <ul>
@@ -13,6 +14,7 @@ const Navbar = (props) => {
                 <li><button>Edit Profile</button></li>
             </ul>
         </div>
+        </body>
     )
 }
 
