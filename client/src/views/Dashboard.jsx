@@ -6,10 +6,12 @@ import Navbar from '../components/Navbar'
 import Header from '../components/Header'
 import InventoryStats from '../components/InventoryStats'
 import InventoryTable from '../components/InventoryTable'
+import css from '../components/main.module.css'
 
 const Dashboard = (props) => {
     const [id,setId] = useState('')
 return(
+    <body>
     <>
     <p>{id}</p>
     <header>{<Header />}</header>
@@ -18,6 +20,7 @@ return(
     <div>{<InventoryTable />}</div>
 
     </>
+    </body>
 )
 }
 

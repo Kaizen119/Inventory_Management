@@ -1,3 +1,79 @@
+/* dark blue = rgb(4,43,91)
+light blue = rgb(88,225,226)
+white = rgb(255,255,255)
+teal eyes = rgb(96,246,246)
+font blue = rgb(72,158,244) */
+
+
+
 .img {
     width: 250px;
+}
+body{
+    background-color: rgb(4,43,91);
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top:5%;
+
+}
+.container{
+    display: flex;
+    background-color: rgb(96,246,246);
+    height:500px;
+    width: 600px;
+    color: black;
+    border-radius: 20%;
+    border-color: white;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: x-large;
+    font-style: bold;
+    
+    
+
+}
+.container2{
+    display: flex;
+    background-color: rgb(96,246,246);
+    height:500px;
+    width: 600px;
+    color: black;
+    border-radius: 20%;
+    border-color: white;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: x-large;
+    font-style: bold;
+    margin-top: 20px;
+    
+
+}
+h1{
+    color: rgb(4,43,91);
+
+}
+.btn{
+    color: rgb(4,43,91);
+    background-color: white;
+    font: 200;
+    height: 30px;
+    width: 120px;
+    margin-top: 10px;
+    font-size: large;
+    padding: 3px;
+}
+.nav{
+    background-color: rgb(88,225,226);
+    color: white;
+}
+.form{
+    flex-direction: column;
+
+    justify-content: center;
+    align-content: center;
 }
