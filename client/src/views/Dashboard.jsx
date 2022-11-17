@@ -8,8 +8,10 @@ import InventoryStats from '../components/InventoryStats'
 import InventoryTable from '../components/InventoryTable'
 
 const Dashboard = (props) => {
+    const [id,setId] = useState('')
 return(
     <>
+    <p>{id}</p>
     <header>{<Header />}</header>
     <div>{<Navbar />}</div>
     <div>{<InventoryStats />}</div>

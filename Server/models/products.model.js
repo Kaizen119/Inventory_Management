@@ -16,13 +16,18 @@ const ProductSchema = new mongoose.Schema({
         required: [true, "show us ur best {PATH} "]
     },
 
-    Catagory:{
+    catagory:{
         type: String,
         required: [true, "{PATH} is required"],
         minlength: [3, "{PATH} must be at least 3 charaters long"]
     },
 
-    Price:{
+    price:{
+        type: Number,
+        required: [true, "{PATH} is required"],
+        
+    },
+    quantity:{
         type: Number,
         required: [true, "{PATH} is required"],
         
