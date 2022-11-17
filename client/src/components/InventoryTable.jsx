@@ -62,7 +62,7 @@ return (
                         <td>{oneProduct.price}</td>
                         <td>{oneProduct.quantity}</td>
                         <td>
-                            <button>View</button>
+                        <button onClick={() => navigate(`/oneProduct/${oneProduct._id}`)}>View</button>
                             <button onClick={() => navigate(`/updateProduct/${oneProduct._id}`)}>Update</button>
                             <button onClick={() => deleteProduct(oneProduct._id)}>Delete</button>
                         </td>
