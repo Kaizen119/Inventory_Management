@@ -13,7 +13,7 @@ const ProductSchema = new mongoose.Schema({
 
     image:{
         type: String,
-        required: [true, "show us ur best {PATH} "]
+        required: [true, "Provide an {PATH} of your product"]
     },
 
     catagory:{

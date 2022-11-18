@@ -2,7 +2,6 @@ import React, {useState, useEffect } from 'react'
 import { useParams, useNavigate} from 'react-router-dom'
 import axios from 'axios'
 import Header from '../components/Header'
-import AddItemForm from '../components/AddItemForm'
 import css from '../components/main.module.css'
 
 
@@ -30,7 +29,7 @@ const UpdateProduct = (props) => {
     const [errors,setErrors] = useState([]);
 
     useEffect(() => {
-        axios.get(`http://localhost:8000/api/products/${id}`)
+        axios.get(`http://localhost:8000/api/products/${id}`,{withCredentials: true})
         .then(response => {
             console.log(response.data)
             setProduct(response.data.product)
@@ -55,7 +54,7 @@ const UpdateProduct = (props) => {
             quantity
 
         }
-        axios.put(`http://localhost:8000/api/products/update/${id}`, tempObjToSendToDB)
+        axios.put(`http://localhost:8000/api/products/update/${id}`, tempObjToSendToDB, {withCredentials: true})
         .then(response => {
             console.log("Client Success")
             console.log(response.data)

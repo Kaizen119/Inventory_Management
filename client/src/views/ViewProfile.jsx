@@ -32,15 +32,15 @@ useEffect(() => {
             <header>{<Header />}</header>
         </div>
         <div className={css.main}>
-            <h1>{thisUser.name}</h1>
+            <h1 className={css.text}>{thisUser.name}</h1>
         </div>
             <div>
-                <img src={thisUser.image} alt="not found"  />
+                <img className={css.image} src={thisUser.image} alt="not found"  />
             </div>
             <div className={css.main}>
-                <h3>About</h3>
-                <p>Phone Number:{thisUser.phoneNumber}</p>
-                <p>Bio:{thisUser.bio}</p>
+                <h3 className={css.text}>About</h3>
+                <p className={css.text}>Phone Number:{thisUser.phoneNumber}</p>
+                <p className={css.text}>Bio:{thisUser.bio}</p>
                 </div><br/><br/>
                 <button className={css.btn} onClick={() => navigate('/dashboard')}>Back</button>
                 <button className={css.btn} onClick={() => navigate(`/editprofile/${thisUser._id}`)}>Edit Profile</button>

@@ -26,7 +26,7 @@ const AddItemForm = (props) => {
                 price,
                 quantity
             }
-            axios.post('http://localhost:8000/api/products', tempObjToSendToDB)
+            axios.post('http://localhost:8000/api/products', tempObjToSendToDB, {withCredentials: true})
             .then(response => {
                 console.log("Client Success")
                 console.log(response.data)

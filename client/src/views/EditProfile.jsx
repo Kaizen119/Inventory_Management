@@ -49,7 +49,7 @@ const UpdateProfile = (props) => {
             bio,
 
         }
-        axios.put(`http://localhost:8000/api/users/update/${id}`, tempObjToSendToDB)
+        axios.put(`http://localhost:8000/api/users/update/${id}`, tempObjToSendToDB, {withCredentials: true})
         .then(response => {
             console.log("Client Success")
             console.log(response.data)
@@ -78,16 +78,16 @@ return (
         <header>{<Header />}</header>
     </div>
         <div className={css.main}>
-            <h1>Update Your Profile</h1>
+            <h1 className={css.text}>Update Your Profile</h1>
         </div>
         
             {errors.map((error,index) => <p key ={index}>{error}</p>)}
         
         <form className={css.container} onSubmit={updateUser}>
-            Name:<input onChange={(e) => setName(e.target.value)} value={name}/><br/>   
-            Image Url:<input onChange={(e) => setImage(e.target.value)} value={image}/><br/>
-            Phone Number:<input onChange={(e) => setPhoneNumber(e.target.value)} value={phoneNumber}/><br/>           
-            Bio:<input onChange={(e) => setBio(e.target.value)} value={bio}/><br/>     
+            <p className={css.text}>Name:</p><input onChange={(e) => setName(e.target.value)} value={name}/><br/>   
+            <p className={css.text}>Image Url:</p><input onChange={(e) => setImage(e.target.value)} value={image}/><br/>
+            <p className={css.text}>Phone Number:</p><input onChange={(e) => setPhoneNumber(e.target.value)} value={phoneNumber}/><br/>           
+            <p className={css.text}>Bio:</p><input onChange={(e) => setBio(e.target.value)} value={bio}/><br/>     
             <button>Update Profile</button>
         </form>
         <button onClick={() => navigate('/dashboard')}>Back</button>

@@ -1,6 +1,5 @@
 import React from 'react'
 import axios from 'axios'
-import { useState, useEffect } from 'react'
 import {useNavigate} from 'react-router-dom'
 import css from '../components/main.module.css'
 
@@ -14,7 +13,7 @@ const InventoryTable = (props) => {
      //Delete
 const deleteProduct = (deleteId,) => {
     if(window.confirm("Are you sure you want to remove from your inventory?")){
-    axios.delete(`http://localhost:8000/api/products/${deleteId}`)
+    axios.delete(`http://localhost:8000/api/products/${deleteId}`, {withCredentials: true})
     .then(response => {
         console.log("Delete Success", response.data)
 
@@ -49,9 +48,6 @@ return (
                         <td>{oneProduct.price}</td>
                         <td>{oneProduct.quantity}</td>
                         <td>
-                        {/* <img src="/imgs/spyglass.png" width="20px" alt=""/>|
-                        <img src="/imgs/eraser.png" width="20px" alt=""/>|
-                        <img src="/imgs/trashcan.png"  width="20px" alt=""/> */}
                         <button className={css.btn2} onClick={() => navigate(`/oneProduct/${oneProduct._id}`)}>View</button>
                             <button className={css.btn2} onClick={() => navigate(`/updateProduct/${oneProduct._id}`)}>Update</button>
                             <button className={css.btn2} onClick={() => deleteProduct(oneProduct._id)}>Delete</button>
