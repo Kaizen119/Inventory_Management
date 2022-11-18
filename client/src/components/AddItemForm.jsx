@@ -49,12 +49,13 @@ return (
         <div className={css.container2}>
             {errors.map((error,index) => <p key ={index}>{error}</p>)}
             <form onSubmit={createProduct}>
+                
                 Item Name:<input onChange={(e) => setName(e.target.value)} value={name}/><br/>
                 Image Url:<input onChange={(e) => setImage(e.target.value)} value={image}/><br/>
                 Catagory:<input onChange={(e) => setCatagory(e.target.value)} value={catagory}/><br/>
                 Price:<input type="number" onChange={(e) => setPrice(e.target.value)} value={price}/><br/>
                 Quantity:<input type="number" onChange={(e) => setQuantity(e.target.value)} value={quantity}/><br/>
-                <button className={css.btn}>Submit</button>
+                <br/><button className={css.btn}>Submit</button>
                 <button className={css.btn} onClick={() => navigate('/dashboard')}>Cancel</button>
             </form>
         </div>

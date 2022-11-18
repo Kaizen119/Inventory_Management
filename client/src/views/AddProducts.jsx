@@ -9,10 +9,10 @@ const AddProducts = (props) => {
 
 return (
     <>
-    <div className={css.background2}>
+    <div className={css.background5}>
         <div><Header /></div>
         <div><AddItemForm /></div>
-        </div>
+    </div>
     </>
 )
 }

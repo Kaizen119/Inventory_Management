@@ -59,6 +59,16 @@ font blue = rgb(72,158,244) */
     width: 100%;
 
 }
+.background5{
+    background-image: url(C:\Users\patso\Documents\GitHub\Inventory_Management\client\public\imgs\pineapple.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    justify-content: space-evenly;
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    display: inline-block;
+}
 .container3{
     display: flex;
     color:black;
@@ -116,8 +126,7 @@ font blue = rgb(72,158,244) */
     justify-content: space-between;
     width: 100%;
     height: 75px;
-    z-index: 3;
-    margin-right: 10px;
+    margin:5px
 }
 .headerdiv{
     display: flex;
