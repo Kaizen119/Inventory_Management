@@ -14,7 +14,7 @@ const Dashboard = (props) => {
 
 
     useEffect(() => {
-        //get all the notes from the server
+        //get all the products from the server
         axios.get("http://localhost:8000/api/products")
         .then(response => {
             console.log(response.data)
