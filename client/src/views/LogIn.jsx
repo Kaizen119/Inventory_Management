@@ -4,7 +4,6 @@ import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 import css from '../components/main.module.css'
 
-
 const LogIn = () => {
 
       //for redirect
@@ -14,16 +13,13 @@ const LogIn = () => {
         const[email, setEmail] = useState("")
         const[password, setPassword] = useState("")
 
-
       //DB error array
         const [errors,setErrors] = useState([]);
-
         const loginUser = (e) => {
             e.preventDefault();
             const tempObjToSendToDB = {
                 email,
                 password,
-
             }
             axios.post('http://localhost:8000/api/login', tempObjToSendToDB , {withCredentials: true})
             .then(response => {
@@ -41,15 +37,12 @@ const LogIn = () => {
                     }
                   // Set Errors
                     setErrors(errorArr);
-            }) 
-        }
+            })}
 return (
-
     <>
     <div className={css.container}>
       <img src="/imgs/GBI2.png" alt=""/>
-    <h1>Please Login</h1>
-  
+    <h1>Please Login</h1>  
     <div className='container'>
         {errors.map((error,index) => <p key ={index}>{error}</p>)}
     </div>
@@ -62,8 +55,6 @@ return (
     </div>
     </div>
     </>
-
-)
-}
+)}
 
 export default LogIn

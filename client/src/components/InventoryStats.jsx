@@ -9,7 +9,7 @@ const InventoryStats = (props) => {
 
   return (
     <div>
-        <h4>Inventory Stats</h4>
+        <h2>Inventory Stats</h2>
           <div>
             <p>Total Products</p>
           <p>{props.products.length}</p>

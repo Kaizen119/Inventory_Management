@@ -5,10 +5,11 @@ import {useNavigate} from 'react-router-dom'
 import imgStyle from "./main.module.css"
 
 
+
 const InventoryTable = (props) => {
 
     const navigate = useNavigate()
-    const {products, setProducts} = props
+    // const {products, setProducts} = props
 
      //Delete
 const deleteProduct = (deleteId,) => {
@@ -18,14 +19,15 @@ const deleteProduct = (deleteId,) => {
         console.log("Delete Success", response.data)
 
         // remove from the DOM after a successful delete
-        setProducts(products.filter((thisProduct) => thisProduct._id !== deleteId)) 
+        props.setProducts(props.products.filter((thisProduct) => thisProduct._id !== deleteId)) 
     })
     .catch(err => console.log(err))
     }
 }
 return (
     <>
-    <h4>Inventory Items</h4>
+    <h2>Inventory Items</h2>
+
     <table>
         <thead>
             <tr>
@@ -39,7 +41,7 @@ return (
         </thead>
         <tbody>
         {
-            products.map((oneProduct) => {
+            props.products.map((oneProduct) => {
                 return(
                     <tr key ={oneProduct._id}>
                         <td>{oneProduct.name}</td>

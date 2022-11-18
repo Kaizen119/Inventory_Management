@@ -8,6 +8,8 @@ import AddProducts from './views/AddProducts';
 import UpdateProducts from './views/UpdateProducts'
 import OneProduct from './views/OneProduct'
 import css from './components/main.module.css'
+import ViewProfile from './views/ViewProfile';
+import EditProfile from './views/EditProfile'
 
 function App() {
   return (
@@ -15,6 +17,8 @@ function App() {
     <Routes>
       <Route path='/login' element={<LogIn />}/>
       <Route path='/register' element={<Register />}/>
+      <Route path='/viewprofile' element={<ViewProfile />}/>
+      <Route path='/editprofile' element={<EditProfile />}/>
       <Route path='/dashboard' element={<Dashboard />}/>
       <Route path='/addProduct' element={<AddProducts />}/>
       <Route path='/oneProduct/:id' element={<OneProduct />}/>

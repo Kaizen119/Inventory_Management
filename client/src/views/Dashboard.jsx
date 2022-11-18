@@ -10,6 +10,8 @@ import css from '../components/main.module.css'
 
 const Dashboard = (props) => {
     const [products,setProducts] = useState([]);
+    const [userId, setUserId] = useState()
+
 
     useEffect(() => {
         //get all the notes from the server
@@ -22,15 +24,13 @@ const Dashboard = (props) => {
             console.log(error)
         })
     },[]);
-return(
 
+
+return(
     <div>
         <header>{<Header />}</header>
         <div>{<InventoryStats products = {products} setProducts={setProducts} />}</div>
         <div>{<InventoryTable products = {products} setProducts={setProducts} />}</div>
     </div>
-
-)
-}
-
+)}
 export default Dashboard;
