@@ -1,4 +1,4 @@
- import { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import axios from 'axios'
 import { Link, Navigate, useNavigate } from 'react-router-dom'
 import React from 'react'
@@ -52,8 +52,6 @@ const Header = (props) => {
 
 
             <button className={css.btn} onClick={() => navigate('/viewprofile')}>Profile</button>
-            <img src="/imgs/GBI2.png" alt=""/>
-
             <button className={css.btn} onClick={() => navigate('/addProduct')}>Add Product</button>
             <button className={css.btn} onClick={() => logout()}>Logout</button>
         </div>

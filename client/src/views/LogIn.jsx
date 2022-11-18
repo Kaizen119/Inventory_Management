@@ -46,8 +46,10 @@ return (
         {errors.map((error,index) => <p key ={index}>{error}</p>)}
     <form className='btn' onSubmit={loginUser} ><br/>
         Email: <input onChange={(e) => setEmail(e.target.value)} value={email}/><br/>
-        Password: <input onChange={(e) => setPassword(e.target.value)} value={password}/><br/>
+        Password: <input onChange={(e) => setPassword(e.target.value)} value={password}/><br/><br/>
         <button className={css.btn}>Log In</button>
+        <button className={css.btn} onClick={() => navigate('/')}>Back</button>
+        <button className={css.btn} onClick={() => navigate('/register')}>Register</button>
     </form>
     </div>
     </div>

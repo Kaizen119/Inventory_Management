@@ -1,8 +1,8 @@
 import React, {useState, useEffect } from 'react'
 import { useParams, useNavigate} from 'react-router-dom'
 import axios from 'axios'
-
-
+import css from '../components/main.module.css'
+import Header from '../components/Header'
 
 
 
@@ -73,28 +73,25 @@ const UpdateProfile = (props) => {
 
 
 return (
-    <>
-    <div>
-        <div>
+    <div className={css.background6}>
+    <div className={css.headerdiv}>
+        <header>{<Header />}</header>
+    </div>
+        <div className={css.main}>
             <h1>Update Your Profile</h1>
-            <button onClick={() => navigate('/dashboard')}>Inventory Dashboard</button>
         </div>
         
             {errors.map((error,index) => <p key ={index}>{error}</p>)}
         
-        <form onSubmit={updateUser}>
-            Name:<input onChange={(e) => setName(e.target.value)} value={name}/><br/>
-        
+        <form className={css.container} onSubmit={updateUser}>
+            Name:<input onChange={(e) => setName(e.target.value)} value={name}/><br/>   
             Image Url:<input onChange={(e) => setImage(e.target.value)} value={image}/><br/>
-
-            Phone Number:<input  type="number" onChange={(e) => setPhoneNumber(e.target.value)} value={phoneNumber}/><br/>
-            
-            Bio:<input onChange={(e) => setBio(e.target.value)} value={bio}/><br/>
-        
+            Phone Number:<input  type="number" onChange={(e) => setPhoneNumber(e.target.value)} value={phoneNumber}/><br/>           
+            Bio:<input onChange={(e) => setBio(e.target.value)} value={bio}/><br/>     
             <button>Update Profile</button>
         </form>
+        <button onClick={() => navigate('/dashboard')}>Back</button>
     </div>
-    </>
 )
 }
 
