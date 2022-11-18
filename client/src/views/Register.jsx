@@ -66,8 +66,8 @@ return (
     <form onSubmit={createUser}>
         Name:  <input onChange={(e) => setName(e.target.value)} value={name}/><br/>
         Email: <input onChange={(e) => setEmail(e.target.value)} value={email}/><br/>
-        Password:<input onChange={(e) => setPassword(e.target.value)} value={password}/><br/>
-        Confirm Password:<input onChange={(e) => setConfirmPassword(e.target.value)} value={confirmPassword}/><br/>
+        Password:<input type="password" onChange={(e) => setPassword(e.target.value)} value={password}/><br/>
+        Confirm Password:<input type="password" onChange={(e) => setConfirmPassword(e.target.value)} value={confirmPassword}/><br/>
         Image: <input onChange={(e) => setImage(e.target.value)} value={image}/><br/>
         Phone Number: <input onChange={(e) => setPhoneNumber(e.target.value)} value={phoneNumber}/><br/>
         Bio:<textarea onChange={(e) => setBio(e.target.value)} value={bio}></textarea>
