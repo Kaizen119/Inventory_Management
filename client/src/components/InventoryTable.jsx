@@ -8,25 +8,24 @@ import imgStyle from "./main.module.css"
 const InventoryTable = (props) => {
 
     const navigate = useNavigate()
-    const [products, setProducts] = useState([]);
-
+    const {products, setProducts} = props
     //trigger when the component has finished loading
-    useEffect(() => {
+    // useEffect(() => {
         //get all the notes from the server
-        axios.get("http://localhost:8000/api/products")
-        .then(response => {
-            console.log(response.data)
-            setProducts(response.data)
-        })
-        .catch(error => {
-            console.log(error)
-        })
-    },[]);
+    //     axios.get("http://localhost:8000/api/products")
+    //     .then(response => {
+    //         console.log(response.data)
+    //         setProducts(response.data)
+    //     })
+    //     .catch(error => {
+    //         console.log(error)
+    //     })
+    // },[]);
 
 
      //Delete
 const deleteProduct = (deleteId,) => {
-   if(window.confirm("Are you sure you want to remove from your inventory?")){
+    if(window.confirm("Are you sure you want to remove from your inventory?")){
     axios.delete(`http://localhost:8000/api/products/${deleteId}`)
     .then(response => {
         console.log("Delete Success", response.data)

@@ -37,7 +37,7 @@ const Register = () => {
             phoneNumber,
             bio
         }
-        axios.post('http://localhost:8000/api/register', tempObjToSendToDB)
+        axios.post('http://localhost:8000/api/register', tempObjToSendToDB ,{withCredentials: true})
         .then(response => {
             console.log("Client Success")
             console.log(response.data)

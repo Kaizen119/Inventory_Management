@@ -25,7 +25,7 @@ const LogIn = () => {
                 password,
 
             }
-            axios.post('http://localhost:8000/api/login', tempObjToSendToDB)
+            axios.post('http://localhost:8000/api/login', tempObjToSendToDB , {withCredentials: true})
             .then(response => {
                 console.log("Client Success")
                 console.log(response.data)
