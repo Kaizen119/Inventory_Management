@@ -2,7 +2,7 @@ import React from 'react'
 import axios from 'axios'
 import { useState, useEffect } from 'react'
 import {useNavigate} from 'react-router-dom'
-import imgStyle from "./main.module.css"
+import css from '../components/main.module.css'
 
 
 const InventoryTable = (props) => {
@@ -25,10 +25,10 @@ const deleteProduct = (deleteId,) => {
 }
 return (
     <>
-    <h4>Inventory Items</h4>
-    <table>
-        <thead>
-            <tr>
+    <div>
+    <table className={css.table}>
+        <thead className={css.table}>
+            <tr className={css.table}>
                 <td>Name:</td>
                 <td>Image:</td>
                 <td>Catagory:</td>
@@ -43,7 +43,7 @@ return (
                 return(
                     <tr key ={oneProduct._id}>
                         <td>{oneProduct.name}</td>
-                        <td><img src={oneProduct.image} alt="item pic" className={imgStyle.img}></img></td>
+                        <td><img src={oneProduct.image} alt="item pic" className={css.img}></img></td>
                         <td>{oneProduct.catagory}</td>
                         <td>{oneProduct.price}</td>
                         <td>{oneProduct.quantity}</td>
@@ -58,6 +58,7 @@ return (
         }
         </tbody>
     </table>
+    </div>
     </>
 )
 }

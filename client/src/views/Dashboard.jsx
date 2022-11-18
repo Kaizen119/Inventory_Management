@@ -23,13 +23,15 @@ const Dashboard = (props) => {
         })
     },[]);
 return(
-
-    <div>
-        <header>{<Header />}</header>
+    <div className={css.background2}>
+        <div className={css.headerdiv}>
+            <header>{<Header />}</header>
+        </div>
+        <div className={css.main}>
         <div>{<InventoryStats products = {products} setProducts={setProducts} />}</div>
         <div>{<InventoryTable products = {products} setProducts={setProducts} />}</div>
     </div>
-
+    </div>
 )
 }
 
