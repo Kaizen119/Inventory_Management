@@ -15,6 +15,7 @@ const LogIn = () => {
 
       //DB error array
         const [errors,setErrors] = useState([]);
+        
         const loginUser = (e) => {
             e.preventDefault();
             const tempObjToSendToDB = {
@@ -43,7 +44,9 @@ return (
     <div className={css.background}>
     <div className={css.container}>
       <h1>Login</h1>
+      <div>
         {errors.map((error,index) => <p key ={index}>{error}</p>)}
+      </div>
     <form className='btn' onSubmit={loginUser} ><br/>
         Email: <input onChange={(e) => setEmail(e.target.value)} value={email}/><br/>
         Password: <input onChange={(e) => setPassword(e.target.value)} value={password}/><br/><br/>

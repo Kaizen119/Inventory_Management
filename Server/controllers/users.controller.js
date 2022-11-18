@@ -20,16 +20,19 @@ module.exports.register = (requestObj, responseObj) => {
                         })
                         .json({ msg: "success!", user: user });
                 })
-                .catch(err => responseObj.json(err));
+                .catch(err => {
+                    console.log("Server Error")
+                    responseObj.status(400).json(err)
+                })
             }else{
                 //else --> the email is already taken so we will send back an error message
                 responseObj.json({errors: {email:{message:"Email is taken!"}}})
             }
         })
-        .catch(err => {
-            console.log("Server Error")
-            responseObj.status(400).json(err)
-        });
+        // .catch(err => {
+        //     console.log("Server Error")
+        //     responseObj.status(400).json(err)
+        // });
     
 }
 
@@ -41,14 +44,14 @@ module.exports.login = async(requestObj, responseObj) => {
 
     if(user === null) {
         // email not found in users collection
-        return responseObj.json({error: "User not found. Who YOU?!"})
+        return responseObj.status(400).json({error: "User not found. Who YOU?!"})
     }
     // if we made it this far, we found a user with this email address
     // let's compare the supplied password to the hashed password in the database
     const correctPassword = await bcrypt.compare(requestObj.body.password, user.password);
     if(!correctPassword) {
         // password wasn't a match!
-        return responseObj.json({error: "Password is incorrect!"})
+        return responseObj.status(400).json({error: "Password is incorrect!"})
     }
     // if we made it this far, the password was correct
     const userToken = jwt.sign({
@@ -123,16 +126,3 @@ module.exports.updateUser = (requestObj,responseObj) => {
         });
 }
 
-//Get logged in user
-// module.exports.getLoggedInUser = (requestObj,responseObj)=>{
-
-//     const decodedJWT = jwt.decode(requestObj.cookies.usertoken, {complete:true})
-//     // decodedJWT.payload.id
-//     User.findOne({_id: decodedJWT.payload.id })
-//         .then(foundUser=>{
-//             responseObj.json({results: foundUser})
-//         })
-//         .catch(err=>{
-//             responseObj.json(err)
-//         })
-// }

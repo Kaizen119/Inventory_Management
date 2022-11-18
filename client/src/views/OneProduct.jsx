@@ -13,7 +13,7 @@ const OneProduct = () => {
     const [thisProduct, setThisProduct] = useState(null)
 
 useEffect(() => {
-    axios.get(`http://localhost:8000/api/products/${id}`)
+    axios.get(`http://localhost:8000/api/products/${id}`, {withCredentials: true})
     .then(response => {
         console.log(response.data)
         setThisProduct(response.data)

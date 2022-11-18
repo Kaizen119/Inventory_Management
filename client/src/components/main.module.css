@@ -11,7 +11,7 @@ font blue = rgb(72,158,244) */
 
 
 .img {
-    width: 100px;
+    width: 200px;
 }
 
 .background{
@@ -29,7 +29,6 @@ font blue = rgb(72,158,244) */
 }
 .background2{
 
-    background-image: ('/client/public/imgs/knife.jpeg');
     background-image: url(https://images.pexels.com/photos/349609/pexels-photo-349609.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
     background-size: cover;
     background-repeat: no-repeat;
@@ -38,6 +37,8 @@ font blue = rgb(72,158,244) */
     height: 100vh;
     width: 100%;
     display: inline-block;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 .container{
@@ -193,4 +194,12 @@ font blue = rgb(72,158,244) */
 .table, td{
     border: 3px solid;
     font-size: 50px;
+}
+
+.text{
+    color: whitesmoke
+}
+
+.image{
+    width: 300px
 }

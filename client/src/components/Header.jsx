@@ -1,12 +1,11 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios'
-import { Link, Navigate, useNavigate } from 'react-router-dom'
+import {  useNavigate } from 'react-router-dom'
 import React from 'react'
 import css from '../components/main.module.css'
 
 const Header = (props) => {
 
-    const [users,setUsers] = useState('');
     const navigate = useNavigate();
 
     const [loggedInUser, setLoggedInUser] = useState({})
