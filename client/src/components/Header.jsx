@@ -10,15 +10,31 @@ const Header = (props) => {
     const navigate = useNavigate();
 
     // trigger when the component has finished loading
-    useEffect(() => {
-        //get all the users from server
-        axios.get(`http://localhost:8000/api/users`, {withCredentials: true})
-            .then(res => {
-                console.log(res.data)
-                setUsers(res.data)
+    // useEffect(() => {
+    //     axios.get("http://localhost:8000/api/users/getloggedinuser",{withCredentials: true})
+    //         .then(res => {
+    //             console.log("cookie data",res)
+    //             setUsers(res.data.results)
+    //         })
+    //         .catch(err => {
+    //             console.log(err)
+    //         })
+    // }, [])
+
+    const [loggedInUser, setLoggedInUser] = useState({})
+    useEffect(()=>{
+        axios.get("http://localhost:8000/api/users/getloggedinuser", {withCredentials:true})
+            .then(res=>{
+                console.log("res when getting logged in user", res)
+                if(res.data.results){
+                    //this means the user is logged in and can accees this page
+                    setLoggedInUser(res.data.results)
+                }
             })
-            .catch(err => {
-                console.log(err)
+            .catch(err=>{
+                //this means someone who is not logged in tried to access the dashboard
+                console.log("err when gettign logged in user", err)
+
             })
     }, [])
 
@@ -31,7 +47,7 @@ const Header = (props) => {
         }
     return (
         <div className={css.header}>
-            <h2>Welcome user </h2>
+            <h2>Welcome {loggedInUser.name} </h2>
 
 
 
