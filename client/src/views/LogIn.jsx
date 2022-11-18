@@ -54,6 +54,7 @@ return (
         Email: <input onChange={(e) => setEmail(e.target.value)} value={email}/><br/>
         Password: <input onChange={(e) => setPassword(e.target.value)} value={password}/><br/>
         <button className={css.btn}>Log In</button>
+        <button className={css.btn} onClick={() => navigate('/')}>Back</button>
     </form>
     </div>
     </div>
