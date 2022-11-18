@@ -25,15 +25,19 @@ const Header = (props) => {
     const logout = () => {
         axios.get('http://localhost:8000/api/logout',{withCredentials: true})
         .then(res => {
-            navigate('/login')
+            navigate('/')
         })
         .catch(err => console.log(err))
         }
     return (
         <div className={css.header}>
             <h2>Welcome user </h2>
+
+
+
             <button className={css.btn} onClick={() => navigate('/viewprofile')}>Profile</button>
             <img src="/imgs/GBI2.png" alt=""/>
+
             <button className={css.btn} onClick={() => navigate('/addProduct')}>Add Product</button>
             <button className={css.btn} onClick={() => logout()}>Logout</button>
         </div>

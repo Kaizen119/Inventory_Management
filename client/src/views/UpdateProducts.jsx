@@ -1,6 +1,9 @@
 import React, {useState, useEffect } from 'react'
 import { useParams, useNavigate} from 'react-router-dom'
 import axios from 'axios'
+import Header from '../components/Header'
+import AddItemForm from '../components/AddItemForm'
+import css from '../components/main.module.css'
 
 
 
@@ -77,12 +80,12 @@ const UpdateProduct = (props) => {
 
 return (
     <>
-    <div>
-        <div>
-            <h1>Update You Product</h1>
-            <button onClick={() => navigate('/dashboard')}>Inventory Dashboard</button>
+
+    <div className={css.background5}>
+    <div className={css.headerdiv}>
+            <header>{<Header />}</header>
         </div>
-        
+        <div className={css.container2}>
             {errors.map((error,index) => <p key ={index}>{error}</p>)}
         
         <form onSubmit={updateProduct}>
@@ -95,9 +98,11 @@ return (
             Price:<input type="number" onChange={(e) => setPrice(e.target.value)} value={price}/><br/>
         
             Quantity:<input type="number" onChange={(e) => setQuantity(e.target.value)} value={quantity}/><br/>
-        
-            <button>Add Product</button>
+        <br/>
+            <button className={css.btn} onClick={() => navigate('/dashboard')}>Cancel</button>
+            <button className={css.btn}>Submit</button>
         </form>
+    </div>
     </div>
     </>
 )

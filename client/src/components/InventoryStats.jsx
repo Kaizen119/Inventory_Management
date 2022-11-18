@@ -2,6 +2,7 @@ import React from 'react'
 import axios from 'axios'
 import { useState, useEffect } from 'react'
 import {useNavigate} from 'react-router-dom'
+import css from '../components/main.module.css'
 
 const InventoryStats = (props) => {
 
@@ -11,17 +12,15 @@ const InventoryStats = (props) => {
     <div>
         <h2>Inventory Stats</h2>
           <div>
-            <p>Total Products</p>
-          <p>{props.products.length}</p>
+            <p>Total Products :{props.products.length}</p>
           </div>
         <div>
-          <p>Total Inventory Value</p>
-          <p>{props.products.reduce((sum,product) => {return sum + (product['price'] * product['quantity'])},0)}</p>
+          <p>Total Inventory Value: {props.products.reduce((sum,product) => {return sum + (product['price'] * product['quantity'])},0)}</p>
         </div>
         <div>
-          <p>Out of Stock</p>
-          <p>{props.products.filter(product => product['quantity'] <= 0).length}</p>
+          <p>Out of Stock: {props.products.filter(product => product['quantity'] <= 0).length}</p>
         </div>
+        <br/>
     </div>
   )
 }

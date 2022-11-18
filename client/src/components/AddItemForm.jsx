@@ -46,26 +46,17 @@ const AddItemForm = (props) => {
         }
 return (
     <>
-        <div>
-            <div>
-                <h1>Add Product</h1>
-                <button className={css.btn2} onClick={() => navigate('/dashboard')}>Inventory Dashboard</button>
-            </div>
-
-                {errors.map((error,index) => <p key ={index}>{error}</p>)}
-
+        <div className={css.container2}>
+            {errors.map((error,index) => <p key ={index}>{error}</p>)}
             <form onSubmit={createProduct}>
-                Name:<input onChange={(e) => setName(e.target.value)} value={name}/><br/>
-
+                
+                Item Name:<input onChange={(e) => setName(e.target.value)} value={name}/><br/>
                 Image Url:<input onChange={(e) => setImage(e.target.value)} value={image}/><br/>
-
                 Catagory:<input onChange={(e) => setCatagory(e.target.value)} value={catagory}/><br/>
-
                 Price:<input type="number" onChange={(e) => setPrice(e.target.value)} value={price}/><br/>
-
                 Quantity:<input type="number" onChange={(e) => setQuantity(e.target.value)} value={quantity}/><br/>
-
-                <button className={css.btn}>Add Product</button>
+                <br/><button className={css.btn}>Submit</button>
+                <button className={css.btn} onClick={() => navigate('/dashboard')}>Cancel</button>
             </form>
         </div>
     </>

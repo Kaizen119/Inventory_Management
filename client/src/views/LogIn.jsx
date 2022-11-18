@@ -40,13 +40,10 @@ const LogIn = () => {
             })}
 return (
     <>
+    <div className={css.background}>
     <div className={css.container}>
-      <img src="/imgs/GBI2.png" alt=""/>
-    <h1>Please Login</h1>  
-    <div className='container'>
+      <h1>Login</h1>
         {errors.map((error,index) => <p key ={index}>{error}</p>)}
-    </div>
-    <div>
     <form className='btn' onSubmit={loginUser} ><br/>
         Email: <input onChange={(e) => setEmail(e.target.value)} value={email}/><br/>
         Password: <input onChange={(e) => setPassword(e.target.value)} value={password}/><br/>

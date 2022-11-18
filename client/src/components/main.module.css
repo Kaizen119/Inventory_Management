@@ -3,6 +3,7 @@ light blue = rgb(88,225,226)
 white = rgb(255,255,255)
 teal eyes = rgb(96,246,246)
 font blue = rgb(72,158,244) */
+
 *{
     margin:0;
     padding:0;
@@ -10,76 +11,85 @@ font blue = rgb(72,158,244) */
 
 
 .img {
-    width: 250px;
+    width: 100px;
 }
-.header img{
-    height: 85px;
-    margin-top: -10px;
-}
-body{
-    background-color: rgb(4,43,91);
-    height: 100%;
+
+.background{
+    background-image: url(C:\Users\patso\Documents\GitHub\Inventory_Management\client\public\imgs\whitefood.jpeg);
+    height: 100vh;
     max-width: 100%;
     justify-content: center;
     align-items: center;
     justify-content: center;
     margin: 0;
-
-
+    display: flex;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
+.background2{
+    background-image: url(C:\Users\patso\Documents\GitHub\Inventory_Management\client\public\imgs\knife.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    justify-content: space-evenly;
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    display: inline-block;
+}
+
 .container{
-    margin-top: 100px;
     display: flex;
-    background-color: rgb(96,246,246);
-    height:500px;
-    width: 700px;
     color: black;
-    border-radius: 20%;
-    border-color: white;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    font-size: x-large;
+    font-size: 20px;
     font-style: bold;
-    margin-left: 37%;
-    
+    /* background-color: rgb(255,250,250); */
+}
+.background3{
+    background-image: url(C:\Users\patso\Documents\GitHub\Inventory_Management\client\public\imgs\brown.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    justify-content: center;
+    align-items: center;
+    flex-direction: center;
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    display: inline-block;
 
 }
-.container2{
-    margin-top: 100px;
+.background4{
+    background-image: url(C:\Users\patso\Documents\GitHub\Inventory_Management\client\public\imgs\black.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    justify-content: space-evenly;
     display: flex;
-    background-color: rgb(96,246,246);
-    height:500px;
-    width: 700px;
-    color: black;
-    border-radius: 20%;
-    border-color: white;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    font-size: x-large;
-    font-style: bold;
-    margin-left: 37%;
-;
+    height: 100vh;
+    width: 100%;
+    display: inline-block;
+}
+.background5{
+    background-image: url(C:\Users\patso\Documents\GitHub\Inventory_Management\client\public\imgs\pineapple.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    justify-content: space-evenly;
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    display: inline-block;
 }
 .container3{
     display: flex;
-    margin-top: 100px;
-    background-color: rgb(96,246,246);
-    height:500px;
-    width: 700px;
-    color: black;
-    border-radius: 20%;
-    border-color: white;
+    color:black;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    font-size: x-large;
+    font-size: xx-large;
     font-style: bold;
-    margin-left: 37%;
-
-    
-
+    font-size: 30px;
+    padding: 10px;
 }
 .container4{
     margin-top: 100px;
@@ -99,52 +109,50 @@ body{
     
 
 }
-h1{
-    color: rgb(4,43,91);
-
-}
 .btn{
-    color: rgb(4,43,91);
     background-color: white;
     font: 200;
     height: 30px;
-    width: 120px;
-    margin-top: 10px;
-    font-size: large;
+    width: 100px;
     padding: 3px;
+    margin-left: 10px;
+    margin-right: 10px;
+    justify-content: space-evenly;
 }
 .btn2{
-    color: rgb(4,43,91);
     background-color: white;
-    font: 200;
     height: 30px;
-    width: 200px;
+    width: 80px;
     margin-top: 10px;
     font-size: large;
     padding: 3px;
-}
-.nav{
-    background-color: rgb(88,225,226);
-    color: white;
-    width: 200px;
 }
 .form{
     flex-direction: column;
-
     justify-content: center;
     align-content: center;
 }
 .header{
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    padding-left: 50px;
-    padding-right: 50px;
-    background-color: rgb(96,246,246);
-    max-width: 100%;
+    width: 100%;
     height: 75px;
-
+    margin:5px
 }
-main{
-    flex: 2;
+.headerdiv{
+    display: flex;
+    z-index: 3;
+    padding: 10px;
+    justify-content: space-between;
+}
+.main{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: x-large;
+}
+.table, td{
+    border: 3px solid;
 }

@@ -2,7 +2,7 @@ import React from 'react'
 import axios from 'axios'
 import { useState, useEffect } from 'react'
 import {useNavigate} from 'react-router-dom'
-import imgStyle from "./main.module.css"
+import css from '../components/main.module.css'
 
 
 
@@ -26,11 +26,10 @@ const deleteProduct = (deleteId,) => {
 }
 return (
     <>
-    <h2>Inventory Items</h2>
-
-    <table>
-        <thead>
-            <tr>
+    <div>
+    <table className={css.table}>
+        <thead className={css.table}>
+            <tr className={css.table}>
                 <td>Name:</td>
                 <td>Image:</td>
                 <td>Catagory:</td>
@@ -45,11 +44,14 @@ return (
                 return(
                     <tr key ={oneProduct._id}>
                         <td>{oneProduct.name}</td>
-                        <td><img src={oneProduct.image} alt="item pic" className={imgStyle.img}></img></td>
+                        <td><img src={oneProduct.image} alt="item pic" className={css.img}></img></td>
                         <td>{oneProduct.catagory}</td>
                         <td>{oneProduct.price}</td>
                         <td>{oneProduct.quantity}</td>
                         <td>
+                        {/* <img src="/imgs/spyglass.png" width="20px" alt=""/>|
+                        <img src="/imgs/eraser.png" width="20px" alt=""/>|
+                        <img src="/imgs/trashcan.png"  width="20px" alt=""/> */}
                         <button onClick={() => navigate(`/oneProduct/${oneProduct._id}`)}>View</button>
                             <button onClick={() => navigate(`/updateProduct/${oneProduct._id}`)}>Update</button>
                             <button onClick={() => deleteProduct(oneProduct._id)}>Delete</button>
@@ -60,6 +62,7 @@ return (
         }
         </tbody>
     </table>
+    </div>
     </>
 )
 }
