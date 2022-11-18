@@ -7,7 +7,6 @@ import InventoryStats from '../components/InventoryStats'
 import InventoryTable from '../components/InventoryTable'
 import css from '../components/main.module.css'
 
-
 const Dashboard = (props) => {
     const [products,setProducts] = useState([]);
     const [userId, setUserId] = useState()
