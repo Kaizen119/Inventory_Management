@@ -4,50 +4,76 @@ const bcrypt = require('bcrypt')
 const User = require("../models/users.model")
 
 //Register
-module.exports.createNewUser = (requestObj,responseObj) => {
-    User.create(requestObj.body)
-        .then(newlyCreatedUser => {
-            const userToken = jwt.sign({
-                id: newlyCreatedUser._id
-            }, process.env.SECRET_KEY);
-            console.log("Server Success")
-            responseObj.cookie("usertoken", userToken,{
-                httpOnly: true
-            }).json(newlyCreatedUser)
+module.exports.register = (requestObj, responseObj) => {
+    User.find({email:requestObj.body.email})
+        .then(usersWithEmail=>{
+            console.log("response when finding user", usersWithEmail)
+            if(usersWithEmail.length ===0){
+                User.create(requestObj.body)
+                .then(user => {
+                    const userToken= jwt.sign({
+                        id: user._id,
+                        name: user.name
+                    }, process.env.SECRET_KEY);
+                    responseObj.cookie("usertoken", userToken, process.env.SECRET_KEY, {
+                            httpOnly: true
+                        })
+                        .json({ msg: "success!", user: user });
+                })
+                .catch(err => responseObj.json(err));
+            }else{
+                //else --> the email is already taken so we will send back an error message
+                responseObj.json({errors: {email:{message:"Email is taken!"}}})
+            }
         })
-        .catch(err => {
-            console.log("Server Error")
-            responseObj.status(400).json(err)
-        });
+        .catch(err=>console.log("errr!", err))
+
     
 }
 
 
 //Login
 
-module.exports.login = async(req, res) => {
-    const user = await User.findOne({ email: req.body.email });
+module.exports.login = async(requestObj, responseObj) => {
+    const user = await User.findOne({ email: requestObj.body.email }); //see if the user exists in db
+
     if(user === null) {
         // email not found in users collection
-        return res.sendStatus(400);
+        return responseObj.json({error: "User not found. Who YOU?!"})
     }
     // if we made it this far, we found a user with this email address
     // let's compare the supplied password to the hashed password in the database
-    const correctPassword = await bcrypt.compare(req.body.password, user.password);
+    const correctPassword = await bcrypt.compare(requestObj.body.password, user.password);
     if(!correctPassword) {
         // password wasn't a match!
-        return res.sendStatus(400);
+        return responseObj.json({error: "Password is incorrect!"})
     }
     // if we made it this far, the password was correct
     const userToken = jwt.sign({
-        id: user._id
+        id: user._id,
+        name: user.name
     }, process.env.SECRET_KEY);
     // note that the response object allows chained calls to cookie and json
-    res
-        .cookie("usertoken", userToken,{
+    responseObj
+        .cookie("usertoken", userToken, process.env.SECRET_KEY, {
             httpOnly: true
         })
         .json({ msg: "success!" });
+}
+
+
+//Get logged in user
+module.exports.getLoggedInUser = (requestObj,responseObj)=>{
+
+    const decodedJWT = jwt.decode(requestObj.cookies.usertoken, {complete:true})
+    // decodedJWT.payload.id
+    User.findOne({_id: decodedJWT.payload.id })
+        .then(foundUser=>{
+            responseObj.json({results: foundUser})
+        })
+        .catch(err=>{
+            responseObj.json(err)
+        })
 }
 
 //Logout
@@ -93,4 +119,18 @@ module.exports.updateUser = (requestObj,responseObj) => {
             console.log("Server Error")
             responseObj.json(err)
         });
+}
+
+//Get logged in user
+module.exports.getLoggedInUser = (requestObj,responseObj)=>{
+
+    const decodedJWT = jwt.decode(requestObj.cookies.usertoken, {complete:true})
+    // decodedJWT.payload.id
+    User.findOne({_id: decodedJWT.payload.id })
+        .then(foundUser=>{
+            responseObj.json({results: foundUser})
+        })
+        .catch(err=>{
+            responseObj.json(err)
+        })
 }

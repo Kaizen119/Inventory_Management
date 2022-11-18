@@ -15,8 +15,12 @@ font blue = rgb(72,158,244) */
 }
 
 .background{
+<<<<<<< HEAD
+    background-image: ('/imgs/whitefood.jpeg');
+=======
     background-image: url(https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=1600);
     background-attachment: fixed;
+>>>>>>> c00d9437155d23ad51eea9e1579c1d7fbcf6d753
     height: 100vh;
     max-width: 100%;
     justify-content: center;
@@ -28,7 +32,11 @@ font blue = rgb(72,158,244) */
     background-repeat: no-repeat;
 }
 .background2{
+<<<<<<< HEAD
+    background-image: ('/client/public/imgs/knife.jpeg');
+=======
     background-image: url(https://images.pexels.com/photos/349609/pexels-photo-349609.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+>>>>>>> c00d9437155d23ad51eea9e1579c1d7fbcf6d753
     background-size: cover;
     background-repeat: no-repeat;
     justify-content: space-evenly;
@@ -49,7 +57,11 @@ font blue = rgb(72,158,244) */
     /* background-color: rgb(255,250,250); */
 }
 .background3{
+<<<<<<< HEAD
+    background-image: ('/imgs/brown.jpeg');
+=======
     background-image: url(https://images.pexels.com/photos/616401/pexels-photo-616401.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+>>>>>>> c00d9437155d23ad51eea9e1579c1d7fbcf6d753
     background-size: cover;
     background-repeat: no-repeat;
     justify-content: center;
@@ -62,7 +74,11 @@ font blue = rgb(72,158,244) */
 
 }
 .background4{
+<<<<<<< HEAD
+    background-image: ('/imgs/black.jpg');
+=======
     background-image: url(https://www.foodiesfeed.com/wp-content/uploads/2019/02/messy-pizza-on-a-black-table.jpg);
+>>>>>>> c00d9437155d23ad51eea9e1579c1d7fbcf6d753
     background-size: cover;
     background-repeat: no-repeat;
     justify-content: space-evenly;
@@ -72,7 +88,11 @@ font blue = rgb(72,158,244) */
     display: inline-block;
 }
 .background5{
+<<<<<<< HEAD
+    background-image:('/client/public/imgs/pineapple.jpg');
+=======
     background-image: url(https://images.pexels.com/photos/1004525/pexels-photo-1004525.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+>>>>>>> c00d9437155d23ad51eea9e1579c1d7fbcf6d753
     background-size: cover;
     background-repeat: no-repeat;
     justify-content: space-evenly;
