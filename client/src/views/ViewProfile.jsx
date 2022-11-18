@@ -14,7 +14,7 @@ const ViewProfile = (props) => {
     const [thisUser, setThisUser] = useState(null)
 
 useEffect(() => {
-    axios.get(`http://localhost:8000/api/users/${id}`)
+    axios.get(`http://localhost:8000/api/users/${id}`, {withCredentials: true})
     .then(response => {
         console.log(response.data)
         setThisUser(response.data)
@@ -43,7 +43,7 @@ useEffect(() => {
                 <p>Bio:{thisUser.bio}</p>
                 </div><br/><br/>
                 <button className={css.btn} onClick={() => navigate('/dashboard')}>Back</button>
-                <button className={css.btn} onClick={() => navigate('/editprofile')}>Edit Profile</button>
+                <button className={css.btn} onClick={() => navigate(`/editprofile/${thisUser._id}`)}>Edit Profile</button>
                 </div>
         ): ("You are not part of the team...")
     }
