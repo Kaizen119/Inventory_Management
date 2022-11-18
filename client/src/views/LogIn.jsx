@@ -47,7 +47,6 @@ return (
 
     <>
     <div className={css.background}>
-    <div className={css.blur}>
     <div className={css.container}>
       <h1>Login</h1>
         {errors.map((error,index) => <p key ={index}>{error}</p>)}
@@ -56,7 +55,6 @@ return (
         Password: <input onChange={(e) => setPassword(e.target.value)} value={password}/><br/>
         <button className={css.btn}>Log In</button>
     </form>
-    </div>
     </div>
     </div>
     </>

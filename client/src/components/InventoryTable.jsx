@@ -48,6 +48,9 @@ return (
                         <td>{oneProduct.price}</td>
                         <td>{oneProduct.quantity}</td>
                         <td>
+                        {/* <img src="/imgs/spyglass.png" width="20px" alt=""/>|
+                        <img src="/imgs/eraser.png" width="20px" alt=""/>|
+                        <img src="/imgs/trashcan.png"  width="20px" alt=""/> */}
                         <button onClick={() => navigate(`/oneProduct/${oneProduct._id}`)}>View</button>
                             <button onClick={() => navigate(`/updateProduct/${oneProduct._id}`)}>Update</button>
                             <button onClick={() => deleteProduct(oneProduct._id)}>Delete</button>

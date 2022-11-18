@@ -9,9 +9,8 @@ const AddProducts = (props) => {
 
 return (
     <>
+    <div className={css.background2}>
         <div><Header /></div>
-        <div className={css.container4}>
-        <img src="/imgs/GBI2.png" alt=""/>
         <div><AddItemForm /></div>
         </div>
     </>
