@@ -7,4 +7,5 @@ module.exports = app => {
     app.post('/api/register', UserController.createNewUser);
     app.get('/api/users/:id', UserController.findOneUser);
     app.get("/api/users", authenticate, UserController.findAllUsers);
+    app.put('/api/users/update/:id', UserController.updateUser);
 }

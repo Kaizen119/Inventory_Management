@@ -1,19 +1,16 @@
 import React, {useState, useEffect } from 'react'
 import { useParams, useNavigate} from 'react-router-dom'
 import axios from 'axios'
-import Header from '../components/Header'
-import AddItemForm from '../components/AddItemForm'
-import css from '../components/main.module.css'
 
 
 
 
 
 
-const UpdateProduct = (props) => {
+const UpdateProfile = (props) => {
 
     const navigate = useNavigate()
-    const [product,setProduct] = useState();
+    const [user,setUser] = useState();
 
     //grab the url variable :id
     const {id} = useParams()
@@ -21,45 +18,42 @@ const UpdateProduct = (props) => {
     // forms submit variables 
     const[name, setName] = useState("")
     const[image, setImage] = useState("")
-    const[catagory, setCatagory] = useState("")
-    const[price, setPrice] = useState("")
-    const[quantity, setQuantity] = useState(0)
+    const[phoneNumber, setPhoneNumber] = useState("")
+    const[bio, setBio] = useState("")
 
     
     //DB error array
     const [errors,setErrors] = useState([]);
 
     useEffect(() => {
-        axios.get(`http://localhost:8000/api/products/${id}`)
+        axios.get(`http://localhost:8000/api/users/${id}`)
         .then(response => {
             console.log(response.data)
-            setProduct(response.data.product)
+            setUser(response.data.product)
             setName(response.data.name)
             setImage(response.data.image)
-            setCatagory(response.data.catagory)
-            setPrice(response.data.price)
-            setQuantity(response.data.quantity)
+            setPhoneNumber(response.data.phoneNumber)
+            setBio(response.data.bio)
         })
         .catch(error => {
             console.log(error)
         })
     },[id])
 
-    const updateProduct = (e) => {
+    const updateUser = (e) => {
         e.preventDefault();
         const tempObjToSendToDB = {
             name,
             image,
-            catagory,
-            price,
-            quantity
+            phoneNumber,
+            bio,
 
         }
-        axios.put(`http://localhost:8000/api/products/update/${id}`, tempObjToSendToDB)
+        axios.put(`http://localhost:8000/api/users/update/${id}`, tempObjToSendToDB)
         .then(response => {
             console.log("Client Success")
             console.log(response.data)
-            navigate('/dashboard')
+            navigate('/viewprofile')
 
         })
         .catch(error => {
@@ -80,32 +74,28 @@ const UpdateProduct = (props) => {
 
 return (
     <>
-
-    <div className={css.background5}>
-    <div className={css.headerdiv}>
-            <header>{<Header />}</header>
+    <div>
+        <div>
+            <h1>Update Your Profile</h1>
+            <button onClick={() => navigate('/dashboard')}>Inventory Dashboard</button>
         </div>
-        <div className={css.container2}>
+        
             {errors.map((error,index) => <p key ={index}>{error}</p>)}
         
-        <form onSubmit={updateProduct}>
+        <form onSubmit={updateUser}>
             Name:<input onChange={(e) => setName(e.target.value)} value={name}/><br/>
         
             Image Url:<input onChange={(e) => setImage(e.target.value)} value={image}/><br/>
+
+            Phone Number:<input  type="number" onChange={(e) => setPhoneNumber(e.target.value)} value={phoneNumber}/><br/>
+            
+            Bio:<input onChange={(e) => setBio(e.target.value)} value={bio}/><br/>
         
-            Catagory:<input onChange={(e) => setCatagory(e.target.value)} value={catagory}/><br/>
-        
-            Price:<input type="number" onChange={(e) => setPrice(e.target.value)} value={price}/><br/>
-        
-            Quantity:<input type="number" onChange={(e) => setQuantity(e.target.value)} value={quantity}/><br/>
-        <br/>
-            <button className={css.btn} onClick={() => navigate('/dashboard')}>Cancel</button>
-            <button className={css.btn}>Submit</button>
+            <button>Update Profile</button>
         </form>
-    </div>
     </div>
     </>
 )
 }
 
-export default UpdateProduct
+export default UpdateProfile

@@ -10,6 +10,8 @@ import css from '../components/main.module.css'
 
 const Dashboard = (props) => {
     const [products,setProducts] = useState([]);
+    const [userId, setUserId] = useState()
+
 
     useEffect(() => {
         //get all the notes from the server
@@ -22,6 +24,7 @@ const Dashboard = (props) => {
             console.log(error)
         })
     },[]);
+
 return(
     <div className={css.background2}>
         <div className={css.headerdiv}>
@@ -34,5 +37,4 @@ return(
     </div>
 )
 }
-
 export default Dashboard;
