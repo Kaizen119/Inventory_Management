@@ -81,8 +81,9 @@ const UpdateProduct = (props) => {
 return (
     <>
     <div className={css.background5}>
-        <div><Header /></div>
-            {/* <button onClick={() => navigate('/dashboard')}>Inventory Dashboard</button> */}
+    <div className={css.headerdiv}>
+            <header>{<Header />}</header>
+        </div>
         <div className={css.container2}>
             {errors.map((error,index) => <p key ={index}>{error}</p>)}
         
@@ -97,7 +98,8 @@ return (
         
             Quantity:<input type="number" onChange={(e) => setQuantity(e.target.value)} value={quantity}/><br/>
         <br/>
-            <button className={css.btn}>Add Product</button>
+            <button className={css.btn} onClick={() => navigate('/dashboard')}>Cancel</button>
+            <button className={css.btn}>Submit</button>
         </form>
     </div>
     </div>

@@ -8,11 +8,13 @@ import AddProducts from './views/AddProducts';
 import UpdateProducts from './views/UpdateProducts'
 import OneProduct from './views/OneProduct'
 import css from './components/main.module.css'
+import Splash from './views/splash';
 
 function App() {
   return (
     <div className="App">
     <Routes>
+      <Route path='/' element={<Splash />}/>
       <Route path='/login' element={<LogIn />}/>
       <Route path='/register' element={<Register />}/>
       <Route path='/dashboard' element={<Dashboard />}/>
@@ -21,7 +23,7 @@ function App() {
       <Route path='/updateProduct/:id' element={<UpdateProducts />}/>
 
       {/* Redirect */}
-      <Route path='*' element={<Navigate to="/dashboard" replace/>}/>
+      <Route path='*' element={<Navigate to="/" replace/>}/>
     </Routes>
     </div>
   );

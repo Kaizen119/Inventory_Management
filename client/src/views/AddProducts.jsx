@@ -10,7 +10,10 @@ const AddProducts = (props) => {
 return (
     <>
     <div className={css.background5}>
-        <div><Header /></div>
+        
+    <div className={css.headerdiv}>
+            <header>{<Header />}</header>
+        </div>
         <div><AddItemForm /></div>
     </div>
     </>

@@ -34,7 +34,7 @@ const Header = (props) => {
     const logout = () => {
         axios.get('http://localhost:8000/api/logout',{withCredentials: true})
         .then(res => {
-            navigate('/login')
+            navigate('/')
         })
         .catch(err => console.log(err))
         }

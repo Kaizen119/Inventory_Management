@@ -3,6 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom'
 import {useState, useEffect } from 'react'
 import axios from 'axios'
 import css from '../components/main.module.css'
+import Header from '../components/Header'
 
 const OneProduct = () => {
   //grab the url variable
@@ -24,10 +25,13 @@ useEffect(() => {
 
 return (
     
-<div>
+<>
     {thisProduct ? (
 
         <div className={css.background3}>
+        <div className={css.headerdiv}>
+            <header>{<Header />}</header>
+        </div>
         <div className={css.container3}>
                 <h1>{thisProduct.name} </h1>
                 <img src={thisProduct.image} width="500px"  border="5px, solid" alt="where did you go" />
@@ -35,14 +39,14 @@ return (
                 <h2>Price:{thisProduct.price}</h2>
                 <h2>Quantity{thisProduct.quantity}</h2>
                 <br/>
-                <button className={css.btn} onClick={() => navigate('/dashboard')}>Inventory</button>
+                <button className={css.btn} onClick={() => navigate('/dashboard')}>Back</button>
 
     </div>
 
     </div>
         ): ("This Product is not shown in Inventory...")
     }
-    </div>
+    </>
     )
 }
 
