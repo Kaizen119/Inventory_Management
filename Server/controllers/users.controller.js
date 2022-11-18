@@ -12,7 +12,7 @@ module.exports.createNewUser = (requestObj,responseObj) => {
             }, process.env.SECRET_KEY);
             console.log("Server Success")
             responseObj.cookie("usertoken", userToken,{
-                httpOnly: false
+                httpOnly: true
             }).json(newlyCreatedUser)
         })
         .catch(err => {

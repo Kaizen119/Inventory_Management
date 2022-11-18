@@ -12,7 +12,7 @@ const Header = (props) => {
     // trigger when the component has finished loading
     useEffect(() => {
         //get all the users from server
-        axios.get(`http://localhost:8000/api/users`)
+        axios.get(`http://localhost:8000/api/users`, {withCredentials: true})
             .then(res => {
                 console.log(res.data)
                 setUsers(res.data)
@@ -22,16 +22,23 @@ const Header = (props) => {
             })
     }, [])
 
-    const logout = () => {
+    // const logout = (() => {
+    //     axios.get('http://localhost:8000/api/logout',{withCredentials: true})
+    //     .then( () => {
+    //         console.log("Logout Success")
+    //         navigate('/')
+    //     })
+    //     .catch(err => console.log(err))
+    // })
 
-        
-        axios.logout('http://localhost:8000/api/logout')
-        .then( () => {
-            console.log("Logout Success")
+    const logout = () => {
+        axios.get('http://localhost:8000/api/logout',{withCredentials: true})
+        .then(res => {
             navigate('/')
         })
         .catch(err => console.log(err))
-    }
+        }
+
 
     return (
         <div className={css.header}>

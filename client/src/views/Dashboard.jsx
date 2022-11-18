@@ -10,9 +10,22 @@ import css from '../components/main.module.css'
 
 
 const Dashboard = (props) => {
-    const [id,setId] = useState('')
+    const [products,setProducts] = useState([]);
+
+    useEffect(() => {
+        //get all the notes from the server
+        axios.get("http://localhost:8000/api/products", {withCredentials: true})
+        .then(response => {
+            console.log(response.data)
+            setProducts(response.data)
+        })
+        .catch(error => {
+            console.log(error)
+        })
+    },[]);
 return(
 
+ <>
     // className={css.btn}
 <body>
         <header>{<Header />}</header>
@@ -23,11 +36,12 @@ return(
         <div className={css.leftbar}>{<Navbar />}
         </div>
         <div className={css.bigmain}>
-            <div>{<InventoryStats />}</div>
-            <div>{<InventoryTable />}</div>
+            <div>{<InventoryStats products = {products} setProducts={setProducts} />}</div>
+            <div>{<InventoryTable products = {products} setProducts={setProducts} />}</div>
         </div>
     </div> */}
     </body>
+    </>
 )
 }
 
