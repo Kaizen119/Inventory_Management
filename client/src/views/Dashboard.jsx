@@ -8,19 +8,40 @@ import InventoryStats from '../components/InventoryStats'
 import InventoryTable from '../components/InventoryTable'
 import css from '../components/main.module.css'
 
-const Dashboard = (props) => {
-    const [id,setId] = useState('')
-return(
-    <body>
-    <>
-    <p>{id}</p>
-    <header>{<Header />}</header>
-    <div>{<Navbar />}</div>
-    <div>{<InventoryStats />}</div>
-    <div>{<InventoryTable />}</div>
 
-    </>
+const Dashboard = (props) => {
+    const [products,setProducts] = useState([]);
+
+    useEffect(() => {
+        //get all the notes from the server
+        axios.get("http://localhost:8000/api/products", {withCredentials: true})
+        .then(response => {
+            console.log(response.data)
+            setProducts(response.data)
+        })
+        .catch(error => {
+            console.log(error)
+        })
+    },[]);
+return(
+
+ <>
+    // className={css.btn}
+<body>
+        <header>{<Header />}</header>
+        
+        <br/><br/>
+    {/* <p>{id}</p> */}
+    {/* <div className={css.main}>
+        <div className={css.leftbar}>{<Navbar />}
+        </div>
+        <div className={css.bigmain}>
+            <div>{<InventoryStats products = {products} setProducts={setProducts} />}</div>
+            <div>{<InventoryTable products = {products} setProducts={setProducts} />}</div>
+        </div>
+    </div> */}
     </body>
+    </>
 )
 }
 

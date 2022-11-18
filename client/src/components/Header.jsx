@@ -1,7 +1,8 @@
-import { useState, useEffect } from 'react';
+ import { useState, useEffect } from 'react';
 import axios from 'axios'
 import { Link, Navigate, useNavigate } from 'react-router-dom'
 import React from 'react'
+import css from '../components/main.module.css'
 
 const Header = (props) => {
 
@@ -11,7 +12,7 @@ const Header = (props) => {
     // trigger when the component has finished loading
     useEffect(() => {
         //get all the users from server
-        axios.get(`http://localhost:8000/api/users`)
+        axios.get(`http://localhost:8000/api/users`, {withCredentials: true})
             .then(res => {
                 console.log(res.data)
                 setUsers(res.data)
@@ -21,24 +22,33 @@ const Header = (props) => {
             })
     }, [])
 
-    const logout = () => {
+    // const logout = (() => {
+    //     axios.get('http://localhost:8000/api/logout',{withCredentials: true})
+    //     .then( () => {
+    //         console.log("Logout Success")
+    //         navigate('/')
+    //     })
+    //     .catch(err => console.log(err))
+    // })
 
-        
-        axios.logout('http://localhost:8000/api/logout')
-        .then( () => {
-            console.log("Logout Success")
+    const logout = () => {
+        axios.get('http://localhost:8000/api/logout',{withCredentials: true})
+        .then(res => {
             navigate('/')
         })
         .catch(err => console.log(err))
-    }
+        }
+
 
     return (
-        <>
-        <div>
-            <h2>Welcome user</h2>
-            <button onClick={() => logout()}>Logout</button>
+        <div className={css.header}>
+            <h2>Welcome user </h2>
+            <button className={css.btn}>Profile</button>
+            <img src="/imgs/GBI2.png" alt=""/>
+            <button className={css.btn} onClick={() => navigate('/addProduct')}>Add Product</button>
+            <button className={css.btn} onClick={() => logout()}>Logout</button>
         </div>
-        </>
+    
     )
 }
 
