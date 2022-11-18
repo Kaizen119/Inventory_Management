@@ -36,8 +36,6 @@ const Header = (props) => {
 
 
             <button className={css.btn} onClick={() => navigate('/viewprofile')}>Profile</button>
-            <img src="/imgs/GBI2.png" alt=""/>
-
             <button className={css.btn} onClick={() => navigate('/addProduct')}>Add Product</button>
             <button className={css.btn} onClick={() => logout()}>Logout</button>
         </div>
