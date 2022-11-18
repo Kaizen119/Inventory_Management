@@ -10,7 +10,7 @@ import Header from '../components/Header'
 const UpdateProfile = (props) => {
 
     const navigate = useNavigate()
-    const [user,setUser] = useState();
+    const [user,setUser] = useState([]);
 
     //grab the url variable :id
     const {id} = useParams()
@@ -18,7 +18,7 @@ const UpdateProfile = (props) => {
     // forms submit variables 
     const[name, setName] = useState("")
     const[image, setImage] = useState("")
-    const[phoneNumber, setPhoneNumber] = useState("")
+    const[phoneNumber, setPhoneNumber] = useState(0)
     const[bio, setBio] = useState("")
 
     
@@ -26,10 +26,10 @@ const UpdateProfile = (props) => {
     const [errors,setErrors] = useState([]);
 
     useEffect(() => {
-        axios.get(`http://localhost:8000/api/users/${id}`)
+        axios.get(`http://localhost:8000/api/users/${id}`,{withCredentials: true})
         .then(response => {
             console.log(response.data)
-            setUser(response.data.product)
+            setUser(response.data.user)
             setName(response.data.name)
             setImage(response.data.image)
             setPhoneNumber(response.data.phoneNumber)
@@ -53,7 +53,7 @@ const UpdateProfile = (props) => {
         .then(response => {
             console.log("Client Success")
             console.log(response.data)
-            navigate('/viewprofile')
+            navigate('/dashboard')
 
         })
         .catch(error => {
@@ -86,7 +86,7 @@ return (
         <form className={css.container} onSubmit={updateUser}>
             Name:<input onChange={(e) => setName(e.target.value)} value={name}/><br/>   
             Image Url:<input onChange={(e) => setImage(e.target.value)} value={image}/><br/>
-            Phone Number:<input  type="number" onChange={(e) => setPhoneNumber(e.target.value)} value={phoneNumber}/><br/>           
+            Phone Number:<input onChange={(e) => setPhoneNumber(e.target.value)} value={phoneNumber}/><br/>           
             Bio:<input onChange={(e) => setBio(e.target.value)} value={bio}/><br/>     
             <button>Update Profile</button>
         </form>

@@ -36,7 +36,7 @@ const UserSchema = new mongoose.Schema({
     },
 
     phoneNumber: {
-        type: Number,
+        type: String,
         default: "999-999-9999"
     },
 

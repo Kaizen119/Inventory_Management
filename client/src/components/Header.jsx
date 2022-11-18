@@ -9,18 +9,6 @@ const Header = (props) => {
     const [users,setUsers] = useState('');
     const navigate = useNavigate();
 
-    // trigger when the component has finished loading
-    // useEffect(() => {
-    //     axios.get("http://localhost:8000/api/users/getloggedinuser",{withCredentials: true})
-    //         .then(res => {
-    //             console.log("cookie data",res)
-    //             setUsers(res.data.results)
-    //         })
-    //         .catch(err => {
-    //             console.log(err)
-    //         })
-    // }, [])
-
     const [loggedInUser, setLoggedInUser] = useState({})
     useEffect(()=>{
         axios.get("http://localhost:8000/api/users/getloggedinuser", {withCredentials:true})
@@ -51,7 +39,7 @@ const Header = (props) => {
 
 
 
-            <button className={css.btn} onClick={() => navigate('/viewprofile')}>Profile</button>
+            <button className={css.btn} onClick={() => navigate(`/viewprofile/${loggedInUser._id}`)}>Profile</button>
             <button className={css.btn} onClick={() => navigate('/addProduct')}>Add Product</button>
             <button className={css.btn} onClick={() => logout()}>Logout</button>
         </div>

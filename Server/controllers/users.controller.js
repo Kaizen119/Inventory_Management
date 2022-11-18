@@ -26,8 +26,10 @@ module.exports.register = (requestObj, responseObj) => {
                 responseObj.json({errors: {email:{message:"Email is taken!"}}})
             }
         })
-        .catch(err=>console.log("errr!", err))
-
+        .catch(err => {
+            console.log("Server Error")
+            responseObj.status(400).json(err)
+        });
     
 }
 
@@ -122,15 +124,15 @@ module.exports.updateUser = (requestObj,responseObj) => {
 }
 
 //Get logged in user
-module.exports.getLoggedInUser = (requestObj,responseObj)=>{
+// module.exports.getLoggedInUser = (requestObj,responseObj)=>{
 
-    const decodedJWT = jwt.decode(requestObj.cookies.usertoken, {complete:true})
-    // decodedJWT.payload.id
-    User.findOne({_id: decodedJWT.payload.id })
-        .then(foundUser=>{
-            responseObj.json({results: foundUser})
-        })
-        .catch(err=>{
-            responseObj.json(err)
-        })
-}
+//     const decodedJWT = jwt.decode(requestObj.cookies.usertoken, {complete:true})
+//     // decodedJWT.payload.id
+//     User.findOne({_id: decodedJWT.payload.id })
+//         .then(foundUser=>{
+//             responseObj.json({results: foundUser})
+//         })
+//         .catch(err=>{
+//             responseObj.json(err)
+//         })
+// }

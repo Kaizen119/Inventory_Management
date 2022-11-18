@@ -69,7 +69,7 @@ return (
         Password:<input onChange={(e) => setPassword(e.target.value)} value={password}/><br/>
         Confirm Password:<input onChange={(e) => setConfirmPassword(e.target.value)} value={confirmPassword}/><br/>
         Image: <input onChange={(e) => setImage(e.target.value)} value={image}/><br/>
-        Phone Number: <input type="number" onChange={(e) => setPhoneNumber(e.target.value)} value={phoneNumber}/><br/>
+        Phone Number: <input onChange={(e) => setPhoneNumber(e.target.value)} value={phoneNumber}/><br/>
         Bio:<textarea onChange={(e) => setBio(e.target.value)} value={bio}></textarea>
         <br/><button className={css.btn} >Register</button>
         <button className={css.btn} onClick={() => navigate('/login')}>Back</button>
