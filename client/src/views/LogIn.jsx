@@ -44,7 +44,7 @@ const LogIn = () => {
             }) 
         }
 return (
-  <body>
+
     <>
     <div className={css.container}>
       <img src="/imgs/GBI2.png" alt=""/>
@@ -62,7 +62,7 @@ return (
     </div>
     </div>
     </>
-    </body>
+
 )
 }
 

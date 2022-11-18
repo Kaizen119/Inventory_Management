@@ -34,7 +34,7 @@ const Header = (props) => {
     const logout = () => {
         axios.get('http://localhost:8000/api/logout',{withCredentials: true})
         .then(res => {
-            navigate('/')
+            navigate('/login')
         })
         .catch(err => console.log(err))
         }
@@ -48,7 +48,6 @@ const Header = (props) => {
             <button className={css.btn} onClick={() => navigate('/addProduct')}>Add Product</button>
             <button className={css.btn} onClick={() => logout()}>Logout</button>
         </div>
-    
     )
 }
 
