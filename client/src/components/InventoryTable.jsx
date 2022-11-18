@@ -52,9 +52,9 @@ return (
                         {/* <img src="/imgs/spyglass.png" width="20px" alt=""/>|
                         <img src="/imgs/eraser.png" width="20px" alt=""/>|
                         <img src="/imgs/trashcan.png"  width="20px" alt=""/> */}
-                        <button onClick={() => navigate(`/oneProduct/${oneProduct._id}`)}>View</button>
-                            <button onClick={() => navigate(`/updateProduct/${oneProduct._id}`)}>Update</button>
-                            <button onClick={() => deleteProduct(oneProduct._id)}>Delete</button>
+                        <button className={css.btn2} onClick={() => navigate(`/oneProduct/${oneProduct._id}`)}>View</button>
+                            <button className={css.btn2} onClick={() => navigate(`/updateProduct/${oneProduct._id}`)}>Update</button>
+                            <button className={css.btn2} onClick={() => deleteProduct(oneProduct._id)}>Delete</button>
                         </td>
                     </tr>
                 )

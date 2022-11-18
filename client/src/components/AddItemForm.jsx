@@ -46,7 +46,7 @@ const AddItemForm = (props) => {
         }
 return (
     <>
-        <div className={css.container2}>
+        <div className={css.container5}>
             {errors.map((error,index) => <p key ={index}>{error}</p>)}
             <form onSubmit={createProduct}>
                 

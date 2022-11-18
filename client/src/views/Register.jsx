@@ -72,6 +72,7 @@ return (
         Phone Number: <input type="number" onChange={(e) => setPhoneNumber(e.target.value)} value={phoneNumber}/><br/>
         Bio:<textarea onChange={(e) => setBio(e.target.value)} value={bio}></textarea>
         <br/><button className={css.btn} >Register</button>
+        <button className={css.btn} onClick={() => navigate('/login')}>Back</button>
     </form>
     </div>
     </div>

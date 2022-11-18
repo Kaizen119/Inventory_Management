@@ -47,9 +47,14 @@ return (
 
     <>
     <div className={css.background4}>
-    <button className={css.btn} onClick={() => navigate('/login')}>Login</button>
-    {/* <div className={css.container}> */}
-    {/* </div> */}
+      <div>
+      {/* <img src="/imgs/white bear.png" alt="" onClick={() => navigate('/login')}/> */}
+        <div className={css.container4}>
+        <h1 onClick={() => navigate('/login')}>Grizzly Inventory</h1>
+        {/* <button className={css.btn2} onClick={() => navigate('/login')}>Login</button>
+        <button className={css.btn2} onClick={() => navigate('/register')}>Register</button> */}
+        </div>
+      </div>
     </div>
     </>
 

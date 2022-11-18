@@ -15,7 +15,8 @@ font blue = rgb(72,158,244) */
 }
 
 .background{
-    background-image: url(C:\Users\patso\Documents\GitHub\Inventory_Management\client\public\imgs\whitefood.jpeg);
+    background-image: url(https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=1600);
+    background-attachment: fixed;
     height: 100vh;
     max-width: 100%;
     justify-content: center;
@@ -27,7 +28,7 @@ font blue = rgb(72,158,244) */
     background-repeat: no-repeat;
 }
 .background2{
-    background-image: url(C:\Users\patso\Documents\GitHub\Inventory_Management\client\public\imgs\knife.jpeg);
+    background-image: url(https://images.pexels.com/photos/349609/pexels-photo-349609.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
     background-size: cover;
     background-repeat: no-repeat;
     justify-content: space-evenly;
@@ -48,7 +49,7 @@ font blue = rgb(72,158,244) */
     /* background-color: rgb(255,250,250); */
 }
 .background3{
-    background-image: url(C:\Users\patso\Documents\GitHub\Inventory_Management\client\public\imgs\brown.jpeg);
+    background-image: url(https://images.pexels.com/photos/616401/pexels-photo-616401.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
     background-size: cover;
     background-repeat: no-repeat;
     justify-content: center;
@@ -61,7 +62,7 @@ font blue = rgb(72,158,244) */
 
 }
 .background4{
-    background-image: url(C:\Users\patso\Documents\GitHub\Inventory_Management\client\public\imgs\black.jpg);
+    background-image: url(https://www.foodiesfeed.com/wp-content/uploads/2019/02/messy-pizza-on-a-black-table.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     justify-content: space-evenly;
@@ -71,7 +72,7 @@ font blue = rgb(72,158,244) */
     display: inline-block;
 }
 .background5{
-    background-image: url(C:\Users\patso\Documents\GitHub\Inventory_Management\client\public\imgs\pineapple.jpg);
+    background-image: url(https://images.pexels.com/photos/1004525/pexels-photo-1004525.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
     background-size: cover;
     background-repeat: no-repeat;
     justify-content: space-evenly;
@@ -80,6 +81,28 @@ font blue = rgb(72,158,244) */
     width: 100%;
     display: inline-block;
 }
+.background6{
+    background-image: url(https://motionarray.imgix.net/preview-851372-ficpAbLmbG0WTger-large.jpg?w=660&q=60&fit=max&auto=format);
+    background-size: cover;
+    background-repeat: no-repeat;
+    justify-content: space-evenly;
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    display: inline-block;
+}
+.background7{
+    background-image: url(https://img.freepik.com/premium-photo/black-food-cooking-background-stone-texture-with-sea-salt-pepper-garlic-parsley-abstract-food-background-empty-space-text-can-be-used-food-posters-design-menu-top-view_253362-15861.jpg?w=900);
+    background-size: cover;
+    background-repeat: no-repeat;
+    justify-content: space-evenly;
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    display: inline-block;
+}
+
+
 .container3{
     display: flex;
     color:black;
@@ -92,22 +115,30 @@ font blue = rgb(72,158,244) */
     padding: 10px;
 }
 .container4{
-    margin-top: 100px;
+    margin-top: 20%;
     display: flex;
-    background-color: rgb(96,246,246);
-    height:700px;
-    width: 700px;
-    color: black;
-    border-radius: 20%;
+    color: white;
     border-color: white;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    font-size: x-large;
+    font-size: 50px;
     font-style: bold;
-    margin-left: 37%;
-    
-
+    border: 10px solid;
+    margin-left:18%;
+    margin-right: 18%;
+    padding-bottom: 25px;
+}
+.container5{
+    display: flex;
+    color:black;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: xx-large;
+    font-style: bold;
+    font-size: 30px;
+    padding: 10px;
 }
 .btn{
     background-color: white;
@@ -123,9 +154,13 @@ font blue = rgb(72,158,244) */
     background-color: white;
     height: 30px;
     width: 80px;
-    margin-top: 10px;
     font-size: large;
     padding: 3px;
+    margin: 5px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    margin-left: 35px;
 }
 .form{
     flex-direction: column;
@@ -151,8 +186,9 @@ font blue = rgb(72,158,244) */
     flex-direction: column;
     margin-top: 20px;
     margin-bottom: 20px;
-    font-size: x-large;
+    font-size: 30px;
 }
 .table, td{
     border: 3px solid;
+    font-size: 50px;
 }
