@@ -9,19 +9,6 @@ const InventoryTable = (props) => {
 
     const navigate = useNavigate()
     const {products, setProducts} = props
-    //trigger when the component has finished loading
-    // useEffect(() => {
-        //get all the notes from the server
-    //     axios.get("http://localhost:8000/api/products")
-    //     .then(response => {
-    //         console.log(response.data)
-    //         setProducts(response.data)
-    //     })
-    //     .catch(error => {
-    //         console.log(error)
-    //     })
-    // },[]);
-
 
      //Delete
 const deleteProduct = (deleteId,) => {

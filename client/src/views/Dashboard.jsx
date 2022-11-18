@@ -2,7 +2,6 @@ import React from 'react'
 import axios from 'axios'
 import { useState, useEffect } from 'react'
 import {useNavigate} from 'react-router-dom'
-import Navbar from '../components/Navbar'
 import Header from '../components/Header'
 import InventoryStats from '../components/InventoryStats'
 import InventoryTable from '../components/InventoryTable'
@@ -14,7 +13,7 @@ const Dashboard = (props) => {
 
     useEffect(() => {
         //get all the notes from the server
-        axios.get("http://localhost:8000/api/products", {withCredentials: true})
+        axios.get("http://localhost:8000/api/products")
         .then(response => {
             console.log(response.data)
             setProducts(response.data)
@@ -25,24 +24,13 @@ const Dashboard = (props) => {
     },[]);
 return(
 
- <>
-    // className={css.btn}
-<body>
+    <div>
         <header>{<Header />}</header>
-        
-        <br/><br/>
-    {/* <p>{id}</p> */}
-    {/* <div className={css.main}>
-        <div className={css.leftbar}>{<Navbar />}
-        </div>
-        <div className={css.bigmain}>
-            <div>{<InventoryStats products = {products} setProducts={setProducts} />}</div>
-            <div>{<InventoryTable products = {products} setProducts={setProducts} />}</div>
-        </div>
-    </div> */}
-    </body>
-    </>
+        <div>{<InventoryStats products = {products} setProducts={setProducts} />}</div>
+        <div>{<InventoryTable products = {products} setProducts={setProducts} />}</div>
+    </div>
+
 )
 }
 
-export default Dashboard
+export default Dashboard;
