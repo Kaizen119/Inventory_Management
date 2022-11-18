@@ -2,7 +2,7 @@ import React from 'react'
 import {useState} from 'react'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
-
+import css from '../components/main.module.css'
 const AddItemForm = (props) => {
        //for redirect
       const navigate = useNavigate()
@@ -52,7 +52,7 @@ const AddItemForm = (props) => {
     <div>
         <div>
             <h1>Add Product</h1>
-            <button onClick={() => navigate('/dashboard')}>Inventory Dashboard</button>
+            <button className={css.btn2} onClick={() => navigate('/dashboard')}>Inventory Dashboard</button>
         </div>
 
             {errors.map((error,index) => <p key ={index}>{error}</p>)}
@@ -68,7 +68,7 @@ const AddItemForm = (props) => {
 
             Quantity:<input type="number" onChange={(e) => setQuantity(e.target.value)} value={quantity}/><br/>
 
-            <button>Add Product</button>
+            <button className={css.btn}>Add Product</button>
         </form>
     </div>
     </>
