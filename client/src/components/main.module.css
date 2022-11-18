@@ -3,6 +3,7 @@ light blue = rgb(88,225,226)
 white = rgb(255,255,255)
 teal eyes = rgb(96,246,246)
 font blue = rgb(72,158,244) */
+
 *{
     margin:0;
     padding:0;
@@ -16,34 +17,32 @@ font blue = rgb(72,158,244) */
     height: 85px;
     margin-top: -10px;
 }
-body{
-    background-color: rgb(4,43,91);
-    height: 100%;
+.background{
+    background-image: url(C:\Users\patso\Documents\GitHub\Inventory_Management\client\public\imgs\whitefood.jpeg);
+    height: 100vh;
     max-width: 100%;
     justify-content: center;
     align-items: center;
     justify-content: center;
     margin: 0;
-
-
+    display: flex;
+}
+.background img{
+    height: 100%;
+    width: 100%;
 }
 .container{
-    margin-top: 100px;
     display: flex;
-    background-color: rgb(96,246,246);
-    height:500px;
-    width: 700px;
+    height:300px;
+    width: 400px;
     color: black;
-    border-radius: 20%;
+    border-radius: 40%;
     border-color: white;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    font-size: x-large;
+    font-size: 40px;
     font-style: bold;
-    margin-left: 37%;
-    
-
 }
 .container2{
     margin-top: 100px;
@@ -51,7 +50,7 @@ body{
     background-color: rgb(96,246,246);
     height:500px;
     width: 700px;
-    color: black;
+    color:black;
     border-radius: 20%;
     border-color: white;
     justify-content: center;
@@ -97,10 +96,6 @@ body{
     font-style: bold;
     margin-left: 37%;
     
-
-}
-h1{
-    color: rgb(4,43,91);
 
 }
 .btn{
