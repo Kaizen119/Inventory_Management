@@ -78,3 +78,19 @@ module.exports.findAllUsers = (requestObj,responseObj) => {
             responseObj.json(err)
         });
 }
+
+
+//Update 
+module.exports.updateUser = (requestObj,responseObj) => {
+    User.findByIdAndUpdate(
+        requestObj.params.id ,
+        requestObj.body,
+        { new: true, runValidators: true })
+        .then(updatedUser => {
+            responseObj.json(updatedUser)
+        })
+        .catch(err => {
+            console.log("Server Error")
+            responseObj.json(err)
+        });
+}
